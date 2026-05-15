@@ -15,7 +15,7 @@ class DownloadFichaController extends Controller
      */
     public function index()
     {
-        $leadDonwloads = DownloadFicha::get();
+        $leadDonwloads = DownloadFicha::orderBy('created_at', 'desc')->get();
 
         return view('admin.blades.leadFile.index', compact('leadDonwloads'));
     }
