@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#0d0d0d">
-    <meta name="description" content="Girollato é o portal de notícias locais de Vida Nova e Lauro de Freitas. Informações do bairro, segurança, eventos e atualizações da região.">
-    <meta name="keywords" content="Girollato, Sindicato Bahia, agentes comunitários de saúde, agentes de combate às endemias, ACS Bahia, ACE Bahia, sindicato ACS ACE, saúde pública Bahia, trabalhadores da saúde Bahia, direitos dos agentes de saúde, sindicato saúde Bahia, categoria ACS ACE, luta sindical Bahia, representação sindical saúde, agentes comunitários Bahia, agentes endemias Bahia, sindicato dos agentes Bahia">
-    <meta name="google-site-verification" content="-bUd4PZJ-3xvnf7cOkcmNLV7jzTk5106hfB0mPtvhqE" />
+    <meta name="description" content="A Girollato é uma distribuidora especializada em rações, alimentos e artigos pet, oferecendo produtos de qualidade para cães, gatos e outros animais com variedade, cuidado e confiança.">
+    <meta name="keywords" content="Girollato, distribuidora de rações, artigos pet, produtos pet, ração para cães, ração para gatos, acessórios pet, pet shop, alimentos para animais, higiene pet, brinquedos para pets, areia para gatos, distribuidora pet, casa de ração, produtos para cães e gatos, pet store, ração premium, produtos pet em Lauro de Freitas, distribuidora de rações Bahia">    <meta name="google-site-verification" content="-bUd4PZJ-3xvnf7cOkcmNLV7jzTk5106hfB0mPtvhqE" />
     <title>Girollato</title>
     @if(isset($blogInner))
         <meta property="og:url" content="{{ url()->current() }}">
@@ -27,21 +26,21 @@
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Girollato">
-        <meta property="og:description" content="Portal de notícias de Vida Nova e Lauro de Freitas. Girollato cobre segurança, eventos, serviços públicos e tudo o que acontece no bairro.">
-        <meta property="og:image" content="{{asset('build/client/images/compartilhamento.png')}}">
+        <meta property="og:description" content="A Girollato é uma distribuidora especializada em rações, alimentos e artigos pet, oferecendo produtos de qualidade para cães, gatos e outros animais com variedade, cuidado e confiança.">
+        <meta property="og:image" content="https://girolato.com.br/build/client/images/logo.svg">
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:url" content="{{ url()->current() }}">
         <meta name="twitter:title" content="Girollato">
-        <meta name="twitter:description" content="Portal de notícias de Vida Nova e Lauro de Freitas. Girollato cobre segurança, eventos, serviços públicos e tudo o que acontece no bairro.">
-        <meta name="twitter:image" content="{{asset('build/client/images/compartilhamento.png')}}">
+        <meta name="twitter:description" content="A Girollato é uma distribuidora especializada em rações, alimentos e artigos pet, oferecendo produtos de qualidade para cães, gatos e outros animais com variedade, cuidado e confiança.">
+        <meta name="twitter:image" content="https://girolato.com.br/build/client/images/logo.svg">
     @endif
 
     
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="copyright" content="Direitos reservados WHI">
     <meta name="author" content="WHI">
-    <link rel="shortcut icon" href="#assets/images/favicon.svg">
+    <link rel="shortcut icon" href="https://girolato.com.br/build/client/images/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
@@ -69,36 +68,29 @@
         {
             "@context": "https://schema.org",
             "@type": "Organization",
-            "@id": "##organization",
+            "@id": "#organization",
             "name": "Girollato",
             "legalName": "Girollato",
-            "url": "https://www.sindacsba.org.br",
-            "logo": "#assets/images/logo.png",
-            "image": "#assets/images/logo.png",
-            "description": "Girollato é o portal de notícias locais de Vida Nova e Lauro de Freitas. Informações do bairro, segurança, eventos e atualizações da região.",
-            "foundingDate": "2003",
-            "email": "sindacsbahia@gmail.com",
-            "telephone": "+55 71 3017-4112",
-            "sameAs": [
-                "https://www.instagram.com/sindacsbahia",
-                "https://www.tiktok.com/@sindacsbahia",
-                "https://www.youtube.com/channel/UCG0q-E25LZ2Lx73N50tCD8Q",
-                "https://x.com/SindacsBahia",
-                "https://www.facebook.com/sindacsbahia.org.br"
-            ],
+            "url": "https://girolato.com.br/",
+            "logo": "https://girolato.com.br/build/client/images/logo.svg",
+            "image": "https://girolato.com.br/build/client/images/logo.svg",
+            "description": "A Girollato é uma distribuidora especializada em rações, alimentos e artigos pet, oferecendo produtos de qualidade para cães, gatos e outros animais com variedade, cuidado e confiança.",
+            "foundingDate": "2010",
+            "email": "contato@girollato.com.br",
+            "telephone": "+55 71 9 9623-8037",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Rua Do Tesouro, 56 - Edif Santa Cruz Andar 7 Sala 700 - Comércio",
-                "addressLocality": "Salvador",
+                "streetAddress": "Alameda Maji, 144 - Quingoma",
+                "addressLocality": "Lauro de Freitas",
                 "addressRegion": "BA",
-                "postalCode": "40026-028",
+                "postalCode": "42725-610",
                 "addressCountry": "BR"
             },
             "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+55 71 3017-4112",
+                "telephone": "+55 71 9 9623-8037",
                 "contactType": "customer service",
-                "email": "sindacsbahia@gmail.com",
+                "email": "contato@girollato.com.br",
                 "areaServed": "BR",
                 "availableLanguage": ["pt", "en"]
             },
@@ -107,31 +99,34 @@
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
                 "opens": "08:00",
                 "closes": "17:00"
-            },
-            "identifier": {
-                "@type": "PropertyValue",
-                "propertyID": "CNPJ",
-                "value": "06.953.941/0001-26"
-            },
+            }
             "slogan": "Girollato",
             "keywords": [
-                "Girollato",
-                "Notícias Vida Nova",
-                "Notícias Lauro de Freitas",
-                "Portal de notícias Vida Nova",
-                "Jornal local Vida Nova",
-                "Jornal de Lauro de Freitas",
-                "Notícias do bairro Vida Nova",
-                "Acontece em Vida Nova",
-                "Notícias da região de Lauro de Freitas",
-                "Atualidades Vida Nova",
-                "Notícias Bahia região metropolitana",
-                "Comunidade de Vida Nova",
-                "Segurança em Vida Nova",
-                "Eventos em Lauro de Freitas",
-                "Bairro Vida Nova Lauro de Freitas",
-                "Informações locais Vida Nova",
-                "Notícias da comunidade de Vida Nova"
+                "distribuidora de rações",
+                "ração para cães",
+                "ração para gatos",
+                "artigos pet",
+                "produtos pet",
+                "acessórios para pets",
+                "pet shop",
+                "distribuidora pet",
+                "alimentos para animais",
+                "ração premium",
+                "ração super premium",
+                "produtos para cães e gatos",
+                "brinquedos para pets",
+                "higiene pet",
+                "areia para gatos",
+                "pet store",
+                "distribuidor de produtos pet",
+                "ração em Lauro de Freitas",
+                "produtos pet em Lauro de Freitas",
+                "distribuidora de rações Bahia",
+                "produtos para animais domésticos",
+                "suplementos pet",
+                "petshop online",
+                "casa de ração",
+                "loja pet"
             ]
         }
     </script>
