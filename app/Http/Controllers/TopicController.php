@@ -47,7 +47,7 @@ class TopicController extends Controller
         $data['active'] = $request->active?1:0;
 
         $request->validate([
-            'path_image' => ['nullable', 'file', 'image', 'max:2048', 'mimes:jpg,jpeg,png,gif']
+            'path_image' => ['nullable', 'file', 'image', 'max:2048']
         ]);
 
         if ($request->hasFile('path_image')) {
@@ -92,7 +92,7 @@ class TopicController extends Controller
         $data['active'] = $request->active?1:0;
         
         $request->validate([
-            'path_image' => ['nullable', 'file', 'image', 'max:2048', 'mimes:jpg,jpeg,png,gif']
+            'path_image' => ['nullable', 'file', 'image', 'max:2048']
         ]);
 
         if ($request->hasFile('path_image')) {

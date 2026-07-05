@@ -39,7 +39,7 @@ class AboutController extends Controller
         $manager = new ImageManager(GdDriver::class);
 
         $request->validate([
-            'path_image' => ['nullable', 'file', 'image', 'max:2048', 'mimes:jpg,jpeg,png,gif']
+            'path_image' => ['nullable', 'file', 'image', 'max:2048']
         ]);
 
         // about desktop
@@ -155,7 +155,7 @@ class AboutController extends Controller
         $manager = new ImageManager(GdDriver::class);
 
         $request->validate([
-            'path_image' => ['nullable', 'file', 'image', 'max:2048', 'mimes:jpg,jpeg,png,gif']
+            'path_image' => ['nullable', 'file', 'image', 'max:2048']
         ]);
 
         // about desktop
