@@ -45,8 +45,16 @@ use App\Http\Controllers\LetsgoController;
 use App\Http\Controllers\ServiceLocationController;
 use App\Http\Controllers\SessaoFaqController;
 
-Route::get('painel/', function () {
-    return redirect()->route('admin.dashboard.painel');
+Route::domain('localhost')->group(function () {
+    Route::get('/', function (string $tenant) {
+        return "Localhost";
+    });
+});
+
+Route::domain('{tenant}.localhost')->group(function () {
+    Route::get('/painel', function (string $tenant) {
+        return redirect()->route('admin.dashboard.painel');
+    });
 });
 
 Route::prefix('painel/')->group(function () {
