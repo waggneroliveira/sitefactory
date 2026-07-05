@@ -45,11 +45,11 @@ use App\Http\Controllers\LetsgoController;
 use App\Http\Controllers\ServiceLocationController;
 use App\Http\Controllers\SessaoFaqController;
 
-Route::domain('localhost')->group(function () {
-    Route::get('/', function (string $tenant) {
-        return "Localhost";
-    });
-});
+// Route::domain('localhost')->group(function () {
+//     Route::get('/', function (string $tenant) {
+//         return "Localhost";
+//     });
+// });
 
 Route::domain('{tenant}.localhost')->group(function () {
     Route::get('/painel', function (string $tenant) {

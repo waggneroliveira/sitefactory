@@ -40,56 +40,78 @@ public function store(Request $request)
     $data = $request->except(['path_image', 'path_image_mobile']);
     $helper = new HelperArchive();
     $manager = new ImageManager(GdDriver::class);
-
+    
     $request->validate([
-        'path_image' => ['nullable', 'file', 'image', 'max:2048', 'mimes:jpg,jpeg,png,gif'],
-        'path_image_mobile' => ['nullable', 'file', 'image', 'max:2048', 'mimes:jpg,jpeg,png,gif'],
+        'path_image' => ['nullable', 'file', 'image', 'max:2048'],
+        'path_image_mobile' => ['nullable', 'file', 'image', 'max:2048'],
     ]);
 
     // Slide desktop
     if ($request->hasFile('path_image')) {
         $file = $request->file('path_image');
         $mime = $file->getMimeType();
+        $extension = $file->getClientOriginalExtension();
         $filename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME) . '.webp';
 
-        if ($mime === 'image/svg+xml') {
+        if ($mime === 'image/svg+xml' || $extension === 'svg') {
             Storage::putFileAs($this->pathUpload, $file, $filename);
         } else {
-            $image = $manager->read($file)
-                ->resize(null, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();
-                })
-                ->toWebp(quality: 95)
-                ->toString();
+            try {
+                $image = $manager->read($file)
+                    ->resize(null, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->toWebp(quality: 95)
+                    ->toString();
 
-            Storage::put($this->pathUpload . $filename, $image);
+                Storage::put($this->pathUpload . $filename, $image);
+            } catch (\Exception $e) {
+                // Fallback: salva o arquivo original
+                $originalName = $file->getClientOriginalName();
+                Storage::putFileAs($this->pathUpload, $file, $originalName);
+                $data['path_image'] = $this->pathUpload . $originalName;
+                // Remove o continue e use um flag ou retorne
+                // continue; // REMOVA ESTA LINHA
+            }
         }
 
-        $data['path_image'] = $this->pathUpload . $filename;
+        // Só define se não foi definido no catch
+        if (!isset($data['path_image'])) {
+            $data['path_image'] = $this->pathUpload . $filename;
+        }
     }
 
-    // Slide mobile
+    // Slide mobile - similar
     if ($request->hasFile('path_image_mobile')) {
         $fileMobile = $request->file('path_image_mobile');
         $mimeMobile = $fileMobile->getMimeType();
+        $extensionMobile = $fileMobile->getClientOriginalExtension();
         $filenameMobile = pathinfo($fileMobile->getClientOriginalName(), PATHINFO_FILENAME) . '_mobile.webp';
 
-        if ($mimeMobile === 'image/svg+xml') {
+        if ($mimeMobile === 'image/svg+xml' || $extensionMobile === 'svg') {
             Storage::putFileAs($this->pathUpload, $fileMobile, $filenameMobile);
         } else {
-            $imageMobile = $manager->read($fileMobile)
-                ->resize(null, null, function ($constraint) {
-                    $constraint->aspectRatio();
-                    $constraint->upsize();
-                })
-                ->toWebp(quality: 95)
-                ->toString();
+            try {
+                $imageMobile = $manager->read($fileMobile)
+                    ->resize(null, null, function ($constraint) {
+                        $constraint->aspectRatio();
+                        $constraint->upsize();
+                    })
+                    ->toWebp(quality: 95)
+                    ->toString();
 
-            Storage::put($this->pathUpload . $filenameMobile, $imageMobile);
+                Storage::put($this->pathUpload . $filenameMobile, $imageMobile);
+            } catch (\Exception $e) {
+                $originalName = $fileMobile->getClientOriginalName();
+                Storage::putFileAs($this->pathUpload, $fileMobile, $originalName);
+                $data['path_image_mobile'] = $this->pathUpload . $originalName;
+            }
         }
 
-        $data['path_image_mobile'] = $this->pathUpload . $filenameMobile;
+        if (!isset($data['path_image_mobile'])) {
+            $data['path_image_mobile'] = $this->pathUpload . $filenameMobile;
+        }
     }
 
     $data['active'] = $request->active ? 1 : 0;

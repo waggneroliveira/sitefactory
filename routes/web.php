@@ -34,9 +34,12 @@ use Inertia\Inertia;
 
 require __DIR__ . '/dashboard.php';
 
-Route::get('/', function () {
-    return redirect()->route('index');
+Route::domain('localhost')->group(function () {
+    Route::get('/', function () {
+        return "Localhost";
+    })->name('index');
 });
+
 
 Route::get('produto/{category}/{slug}', [ProductPageController::class, 'productView'])->name('client.product');
 Route::get('produtos', [ProductPageController::class, 'productAll'])->name('products');
