@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('preview')->nullable();
             $table->tinyInteger('active')->default(0);
+            $table->string('template_variation')->default('default');
             $table->timestamps();
         });
     }

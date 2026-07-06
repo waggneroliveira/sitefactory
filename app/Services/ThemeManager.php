@@ -8,13 +8,14 @@ class ThemeManager
 {
     public function current(): string
     {   
-        dd(Tenant::current()?->templateTheme);
+        // dd(Tenant::current()?->templateTheme);
         return Tenant::current()?->templateTheme?->slug ?? 'default';
     }
 
     public function view(string $view): string
     {
-        return "client.themes.{$this->current()}.tp-01.blades.{$view}";
+        $path = Tenant::current()?->templateTheme?->template_variation ?? 'default';
+        return "client.themes.{$this->current()}.{$path}.blades.{$view}";
     }
 
     public function asset(string $path): string
