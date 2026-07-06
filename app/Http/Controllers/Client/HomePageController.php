@@ -22,10 +22,11 @@ use App\Models\Statute;
 use App\Models\Topic;
 use App\Models\Video;
 use Carbon\Carbon;
+use App\Services\ThemeManager;
 
 class HomePageController extends Controller
 {
-    public function index()
+    public function index(ThemeManager $theme)
     {
         $blogSuperHighlights = Blog::whereHas('category', function($active){
             $active->where('active', 1);
@@ -149,8 +150,8 @@ class HomePageController extends Controller
         ->orderBy('date', 'asc')
         ->get();
         $popUp = PopUp::active()->first();
-        
-        return view('client.themes.petshop.blades.index', compact(
+
+        return view($theme->view('index'), compact(
             'sessaoFaq', 
             'faqs', 
             'depoiments', 
