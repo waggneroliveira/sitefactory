@@ -150,7 +150,7 @@ class HomePageController extends Controller
         ->get();
         $popUp = PopUp::active()->first();
         
-        return view('client.blades.index', compact(
+        return view('client.themes.petshop.blades.index', compact(
             'sessaoFaq', 
             'faqs', 
             'depoiments', 

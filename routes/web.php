@@ -95,7 +95,7 @@ Route::get('blog/filter/{category?}', [HomePageController::class, 'filterByCateg
 Route::post('/download-ficha/store', [DownloadFichaController::class, 'store'])
 ->name('download.ficha.store');
 
-View::composer('client.core.client', function ($view) {
+View::composer('client.themes.petshop.core.client', function ($view) {
     $blogCategories = BlogCategory::whereHas('blogs')
     ->active()
     ->sorting()
