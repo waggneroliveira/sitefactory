@@ -4,10 +4,14 @@ namespace App\Providers;
 
 use App\Contracts\Repositories\{ BlogRepositoryInterface, ProductRepositoryInterface, AnnouncementRepositoryInterface };
 use App\Contracts\Repositories\AboutRepositoryInterface;
+use App\Contracts\Repositories\BrandRepositoryInterface;
+use App\Contracts\Repositories\ContactRepositoryInterface;
 use App\Models\SettingEmail;
 use App\Repositories\AboutRepository;
 use App\Repositories\AnnouncementRepository;
 use App\Repositories\BlogRepository;
+use App\Repositories\BrandRepository;
+use App\Repositories\ContactRepository;
 use App\Repositories\ProductRepository;
 use App\Services\ThemeManager;
 use Carbon\Carbon;
@@ -30,6 +34,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(AnnouncementRepositoryInterface::class, AnnouncementRepository::class);
         $this->app->bind(AboutRepositoryInterface::class, AboutRepository::class);
         $this->app->bind(ProductRepositoryInterface::class, ProductRepository::class);
+        $this->app->bind(BrandRepositoryInterface::class, BrandRepository::class);
+        $this->app->bind(ContactRepositoryInterface::class, ContactRepository::class);
     }
     
 
