@@ -17,6 +17,11 @@ class ThemeManager
         $path = Tenant::current()?->templateTheme?->template_variation;
         return "client.themes.{$this->current()}.{$path}.blades.{$view}";
     }
+    public function viewIncludes(string $view): string
+    {
+        $path = Tenant::current()?->templateTheme?->template_variation;
+        return "client.themes.{$this->current()}.{$path}.includes.{$view}";
+    }
 
     public function asset(string $path): string
     {

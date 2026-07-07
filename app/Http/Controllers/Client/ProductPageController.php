@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
+use App\Models\Contact;
 use App\Models\Product;
 use App\Models\ProductCategory;
+use App\Services\ThemeManager;
 use Illuminate\Http\Request;
 
 class ProductPageController extends Controller
 {
-    public function productAll(Request $request)
+    public function productAll(ThemeManager $theme, Request $request)
     {
         $category = $request->get('category');
         $brand = $request->get('brand');
@@ -85,20 +87,23 @@ class ProductPageController extends Controller
 
         if ($request->ajax()) {
             return response()->json([
-                'html' => view('client.includes.products', compact('products', 'title'))->render(),
+                'html' => view($theme->viewIncludes('products'), compact('products', 'title'))->render(),
                 'title' => $title
             ]);
         }
 
-        return view('client.blades.products', compact(
+        $contact = Contact::first();
+
+        return view($theme->view('products'), compact(
             'products',
             'productCategories',
             'brands',
             'title',
+            'contact',
         ));
     }
 
-    public function productView($category = null, $slug = null){
+    public function productView(ThemeManager $theme, $category = null, $slug = null){
         if (!$category || !$slug) {
             return view('client.errors.404');
         }else{
@@ -111,13 +116,16 @@ class ProductPageController extends Controller
         ->where('slug', $slug)
         ->active()
         ->first();
+        
+        $contact = Contact::first();
 
         if ($product == null) {
             return view('client.errors.404');
         }
         
-        return view('client.blades.product', compact(
-            'product'
+        return view($theme->view('product'), compact(
+            'product',
+            'contact'
         ));
     }
 }

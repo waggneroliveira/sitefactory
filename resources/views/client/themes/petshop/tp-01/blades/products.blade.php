@@ -1,4 +1,4 @@
-@extends('client.core.client')
+@extends('client.themes.petshop.tp-01.core.client')
 
 @section('content')
 <div class="banner-inner blog container-fluid d-flex justify-content-center align-items-center flex-column position-relative" style="--banner-bg: url('../images/banner-product.png');">
@@ -82,7 +82,7 @@
 
             <!-- Produtos -->
             <div id="products-container" class="row g-4 products mt-4">
-                @include('client.includes.products')
+                @include('client.themes.petshop.tp-01.includes.products')
             </div>
         </div>
     </div>
