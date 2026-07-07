@@ -1,4 +1,4 @@
-@extends('client.core.client')
+@extends('client.themes.petshop.tp-01.core.client')
 
 @section('content')
     <div class="banner-inner container-fluid d-flex justify-content-center align-items-center flex-column position-relative" style="--banner-bg: url('../images/banner-sobre.png');">

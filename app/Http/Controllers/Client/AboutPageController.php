@@ -3,32 +3,52 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
-use App\Models\About;
-use App\Models\BenefitTopic;
-use App\Models\Contact;
-use App\Models\Direction;
-use App\Models\Partner;
-use App\Models\Report;
-use App\Models\ServiceLocation;
-use App\Models\Statute;
-use App\Models\Topic;
-use App\Models\Video;
+use App\Services\AboutPageService;
+use App\Services\ThemeManager;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class AboutPageController extends Controller
 {
-    public function index(){
-        $about = About::active()->first();
-        $topics = Topic::active()->sorting()->get();
-        $benefitTopics = BenefitTopic::active()->sorting()->get();
-        $partners = Partner::active()->sorting()->get();
-        $contact = Contact::first();
-        $statute = Statute::active()->first();
-        $directions = Direction::active()->sorting()->get();
-        $video = Video::active()->first();
-        $reports = Report::active()->get();
-        $serviceLocation = ServiceLocation::active()->first();
+    public function __construct(
+        protected AboutPageService $aboutPageService
+    ) {}
 
-        return view('client.blades.about', compact('serviceLocation', 'video', 'benefitTopics', 'topics', 'reports', 'directions', 'statute', 'contact', 'partners', 'about'));
+    /**
+     * Página principal "Sobre"
+     */
+    public function index(ThemeManager $theme)
+    {
+        $data = $this->aboutPageService->getAboutPageData();
+        
+        return view($theme->view('about'), $data->all());
+    }
+
+    /**
+     * Filtro de relatórios (exemplo de endpoint adicional)
+     */
+    public function filterReports(Request $request): JsonResponse
+    {
+        try {
+            $category = $request->get('category');
+            $result = $this->aboutPageService->getFilteredReports($category);
+
+            $html = view('client.ajax.filter-reports', [
+                'reports' => $result['reports']
+            ])->render();
+
+            return response()->json([
+                'success' => true,
+                'html' => $html,
+                'count' => $result['reports']->count(),
+                'categories' => $result['categories']
+            ]);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Erro ao filtrar relatórios: ' . $e->getMessage()
+            ]);
+        }
     }
 }

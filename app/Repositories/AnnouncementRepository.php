@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Collection;
 
 class AnnouncementRepository implements AnnouncementRepositoryInterface
 {
-    /**
-     * Obtém anúncios horizontais (banner superior)
-     */
     public function getHorizontal(): Collection
     {
         return Announcement::select(
@@ -26,9 +23,6 @@ class AnnouncementRepository implements AnnouncementRepositoryInterface
             ->get();
     }
 
-    /**
-     * Obtém anúncios verticais (banner lateral)
-     */
     public function getVertical(): Collection
     {
         return Announcement::select(
@@ -44,9 +38,6 @@ class AnnouncementRepository implements AnnouncementRepositoryInterface
             ->get();
     }
 
-    /**
-     * Obtém anúncios mobile
-     */
     public function getMobile(): Collection
     {
         return Announcement::select(
@@ -62,4 +53,17 @@ class AnnouncementRepository implements AnnouncementRepositoryInterface
             ->get();
     }
 
+    public function getAll(): Collection
+    {
+        return Announcement::select(
+                'exhibition',
+                'link',
+                'path_image',
+                'active',
+                'sorting',
+            )
+            ->active()
+            ->sorting()
+            ->get();
+    }
 }

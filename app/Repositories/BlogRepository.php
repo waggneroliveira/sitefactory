@@ -6,9 +6,12 @@ use App\Contracts\Repositories\BlogRepositoryInterface;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class BlogRepository implements BlogRepositoryInterface
 {
+    // ============== HOME PAGE ==============
+    
     public function getSuperHighlights(): Collection
     {
         return Blog::whereHas('category', fn($q) => $q->where('active', 1))
@@ -70,5 +73,74 @@ class BlogRepository implements BlogRepositoryInterface
         }
 
         return $query->orderBy('created_at', 'DESC')->get();
+    }
+
+    // ============== BLOG PAGE ==============
+
+    public function getBlogCategories(): Collection
+    {
+        return BlogCategory::whereHas('blogs')
+            ->active()
+            ->sorting()
+            ->get();
+    }
+
+    public function getBlogAll(?string $category = null, ?string $search = null, int $perPage = 15): LengthAwarePaginator
+    {
+        $query = Blog::with('category')
+            ->whereHas('category', fn($q) => $q->where('active', 1))
+            ->active()
+            ->sorting();
+
+        if ($category) {
+            $query->whereHas('category', fn($q) => $q->where('slug', $category));
+        }
+
+        if ($search) {
+            $query->whereHas('category')
+                ->where('title', 'like', '%' . $search . '%');
+        }
+
+        return $query->paginate($perPage);
+    }
+
+    public function getBlogSeeAlso(array $excludedIds, int $limit = 4): Collection
+    {
+        return Blog::with('category')
+            ->whereHas('category', fn($q) => $q->where('active', 1))
+            ->whereNotIn('id', $excludedIds)
+            ->active()
+            ->inRandomOrder()
+            ->limit($limit)
+            ->get();
+    }
+
+    public function getBlogBySlug(string $slug): ?object
+    {
+        return Blog::with(['category'])
+            ->whereHas('category')
+            ->where('slug', $slug)
+            ->active()
+            ->sorting()
+            ->first();
+    }
+
+    public function getBlogRelated(int $categoryId, int $blogId, int $limit = 4): Collection
+    {
+        return Blog::whereHas('category', fn($q) => $q->where('id', $categoryId))
+            ->where('id', '!=', $blogId)
+            ->active()
+            ->sorting()
+            ->take($limit)
+            ->get();
+    }
+
+    public function getViewMores(int $excludedCategoryId, int $limit = 10): Collection
+    {
+        return Blog::whereHas('category', fn($q) => $q->where('id', '<>', $excludedCategoryId))
+            ->active()
+            ->sorting()
+            ->take($limit)
+            ->get();
     }
 }
