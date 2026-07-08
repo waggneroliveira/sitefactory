@@ -37,26 +37,24 @@ class HomePageService
 
         $cacheKey = 'home_page_data_' . app()->getLocale();
             
-        return cache()->remember($cacheKey, 3600, function () {
-            // Pegar dados estáticos/infraestruturais
-            $staticData = $this->getStaticData();
-            
-            // Pegar dados dinâmicos via repositories
-            $blogData = $this->getBlogData();
-            $productData = $this->getProductData();
-            $announcementData = $this->getAnnouncementData();
-            $additionalData = $this->getAdditionalData();
+        // Pegar dados estáticos/infraestruturais
+        $staticData = $this->getStaticData();
+        
+        // Pegar dados dinâmicos via repositories
+        $blogData = $this->getBlogData();
+        $productData = $this->getProductData();
+        $announcementData = $this->getAnnouncementData();
+        $additionalData = $this->getAdditionalData();
 
-            return new HomePageData(
-                array_merge(
-                    $staticData,
-                    $blogData,
-                    $productData,
-                    $announcementData,
-                    $additionalData
-                )
-            );
-        });  
+        return new HomePageData(
+            array_merge(
+                $staticData,
+                $blogData,
+                $productData,
+                $announcementData,
+                $additionalData
+            )
+        );
     }
 
     private function getStaticData(): array

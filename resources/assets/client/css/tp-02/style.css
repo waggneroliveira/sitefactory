@@ -1,0 +1,298 @@
+/* =========================
+   HEADER
+========================= */
+.menu-toggle {
+    gap: 5px;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 1060;
+    margin-left: auto;
+}
+
+.bar {
+    width: 28px;
+    height: 2.5px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Quando rolar a página */
+header.scrolled .bar {
+    background: #1a1a1a;
+}
+
+/* Menu aberto */
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ===== MENU OVERLAY ===== */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 1055;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 420px;
+    height: 100%;
+    background: var(--green-color);
+    padding: 30px 32px;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+}
+
+.menu-overlay.active .menu-container {
+    transform: translateX(0);
+}
+
+/* ===== MENU HEADER ===== */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 32px;
+}
+
+.menu-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.menu-close {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 4px;
+    transition: transform 0.3s ease;
+}
+
+.menu-close:hover {
+    transform: rotate(90deg);
+}
+
+/* ===== MENU NAV ===== */
+.menu-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+.menu-item {
+    margin-bottom: 4px;
+}
+
+.menu-link {
+    display: block;
+    padding: 14px 0;
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 20px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.menu-link:hover {
+    color: #fff !important;
+    padding-left: 12px;
+}
+
+.menu-link.active {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+/* ===== MENU FOOTER ===== */
+.menu-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-btn-agendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: #2E7D32;
+    color: #fff !important;
+}
+
+.menu-btn-agendar:hover {
+    background: #1B5E20;
+    color: #fff !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 991.98px) {
+    header {
+        padding: 12px 0;
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .bar {
+        background: #1a1a1a !important;
+    }
+
+    .menu-toggle.active .bar {
+        background: #fff !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-container {
+        padding: 24px 20px;
+        max-width: 100%;
+    }
+
+    .menu-link {
+        font-size: 18px;
+        padding: 12px 0;
+    }
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-bg {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 500px;
+}
+
+.hero-bg picture,
+.hero-bg video {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 2;
+}
+
+/* Optional: Add overlay for better text readability */
+.hero-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+    .hero-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hero-video-wrapper iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.77777778vh; /* 100% * 16/9 */
+    height: 56.25vw; /* 100% * 9/16 */
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-fallback {
+    display: none;
+}
+
+/* Esconde fallback se o vídeo carregar */
+.hero-video-wrapper:not(:empty) ~ .hero-fallback {
+    display: none;
+}
