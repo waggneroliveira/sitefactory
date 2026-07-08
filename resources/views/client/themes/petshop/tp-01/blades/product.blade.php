@@ -1,4 +1,4 @@
-@extends('client.themes.petshop.tp-01.core.client')
+@extends('client.themes.core.client')
 
 @section('content')
 @if (isset($product))

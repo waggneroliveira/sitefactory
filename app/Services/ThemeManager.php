@@ -20,7 +20,7 @@ class ThemeManager
     public function viewIncludes(string $view): string
     {
         $path = Tenant::current()?->templateTheme?->template_variation;
-        return "client.themes.{$this->current()}.{$path}.includes.{$view}";
+        return "client.themes.includes.{$view}";
     }
 
     public function asset(string $path): string

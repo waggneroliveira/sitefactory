@@ -70,7 +70,6 @@ class ProductRepository implements ProductRepositoryInterface
                 $query->where(fn($q) => 
                     $q->where('title', 'like', "%{$search}%")
                         ->orWhere('description', 'like', "%{$search}%")
-                        ->orWhere('short_description', 'like', "%{$search}%")
                 )
             )
             ->active()
