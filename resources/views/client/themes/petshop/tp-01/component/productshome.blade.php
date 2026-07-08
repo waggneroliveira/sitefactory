@@ -26,10 +26,10 @@
             <div class="row g-4 products">
                 <!-- Produto -->
                 @foreach ($products as $product)                
-                    <div class="col-6 col-sm-6 col-lg-3 product {{$product->category->slug}}">
+                    <div class="col-6 col-sm-6 col-lg-3 product {{ $product->category ? $product->category->slug : '' }}">
                         <div class="product-card">
                             <div class="image border rounded-3 position-relative mb-3">
-                                <a href="{{ route('client.product', ['category' => $product->category->slug, 'slug' => $product->slug]) }}" class="col-12">
+                                <a href="{{ $product->category ? route('client.product', ['category' => $product->category->slug, 'slug' => $product->slug]) : '#' }}" class="col-12">
                                     <span class="btn btn-view font-changa font-16 font-medium opacity-0 col-10 col-lg-5">Ver Produto</span>
                                     <img src="{{asset('storage/' . $product->path_image)}}" alt="{{$product->title}}">
                                 </a>

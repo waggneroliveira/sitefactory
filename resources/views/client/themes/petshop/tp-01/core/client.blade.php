@@ -161,10 +161,10 @@
 
     <style>
         :root {
-            --green-color: {{ $theme->primary_color }};
-            --yellow-color: {{ $theme->secondary_color }};
-            --gradient: {{ $theme->accent_color }};
-            --grey-color: {{ $theme->text_color }};
+            --green-color: {{ $theme->primary_color ?? '#10513D' }};
+            --yellow-color: {{ $theme->secondary_color ?? '#FDC20C' }};
+            --gradient: {{ $theme->accent_color ?? 'rgb(16 81 61 / 50%)' }};
+            --grey-color: {{ $theme->text_color ?? '#565656' }};
         }
         .whatsapp-float{
             position: fixed;
@@ -218,7 +218,7 @@
         <nav class="navbar navbar-expand-lg navbar-light container py-3 px-3 px-lg-0">            
             <!-- Logo -->
             <a class="navbar-brand d-flex align-items-center" href="{{route('index')}}">
-                <img src="{{asset('build/client/images/logo.svg')}}" alt="Girollato" height="40">
+                <img src="{{asset('storage/' .$theme->path_image_logo_header)}}" alt="Girollato" height="40">
             </a>
 
             <!-- Toggle mobile -->
@@ -429,7 +429,7 @@
 
                 <!-- Logo + botão -->
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="{{asset('build/client/images/girollato-footer.svg')}}" alt="Girollato" height="40">
+                    <img src="{{asset('storage/' .$theme->path_image_logo_footer)}}" alt="Girollato" height="40">
 
                     <div class="mt-5">
                         <a href="{{ request()->routeIs('about') ? '#team-section' : route('about') . '#team-section' }}" class="border-btn-footer btn bg-yellow px-4 py-2 rounded-pill font-changa color-green font-16 font-medium text-decoration-none">
