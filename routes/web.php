@@ -28,6 +28,7 @@ use App\Models\Contact;
 use App\Models\Direction;
 use App\Models\Report;
 use App\Models\Statute;
+use App\Models\TemplateTheme;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Inertia\Inertia;
@@ -95,36 +96,8 @@ Route::get('blog/filter/{category?}', [HomePageController::class, 'filterByCateg
 Route::post('/download-ficha/store', [DownloadFichaController::class, 'store'])
 ->name('download.ficha.store');
 
-View::composer('client.themes.petshop.core.client', function ($view) {
-    $blogCategories = BlogCategory::whereHas('blogs')
-    ->active()
-    ->sorting()
-    ->limit(10)
-    ->get();
-    $announcements = Announcement::select(
-        'exhibition',
-        'link',
-        'exhibition',
-        'path_image',
-        'active',
-        'sorting',
-    )
-    ->where('exhibition', '=', 'mobile')
-    ->orWhere('exhibition', '=', 'horizontal')
-    ->active()
-    ->sorting()
-    ->get();
-    $contact = Contact::first();
-    $abouts = About::active()->sorting()->get();
-    $directions = Direction::active()->sorting()->count();
-    $benefitTopics = BenefitTopic::active()->sorting()->count();
-    $report = Report::active()->count();
+View::composer('client.themes.petshop.tp-01.core.client', function ($view) {
+    $theme = TemplateTheme::first();
 
-    return $view->with('blogCategories', $blogCategories)
-    ->with('announcements', $announcements)
-    ->with('contact', $contact)
-    ->with('directions', $directions)
-    ->with('benefitTopics', $benefitTopics)
-    ->with('report', $report)
-    ->with('abouts', $abouts);
+    return $view->with('theme', $theme);
 });

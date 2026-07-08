@@ -20,26 +20,26 @@ class HomePageController extends Controller
         return view($theme->view('index'), $data->all());
     }
 
-    public function filterByCategory(?string $categorySlug = null): JsonResponse
-    {
-        try {
-            $allNews = $this->homePageService->filterNewsByCategory($categorySlug);
+    // public function filterByCategory(?string $categorySlug = null): JsonResponse
+    // {
+    //     try {
+    //         $allNews = $this->homePageService->filterNewsByCategory($categorySlug);
             
-            $html = view('client.ajax.filter-blog-homePage', [
-                'latestNews' => $allNews
-            ])->render();
+    //         $html = view('client.ajax.filter-blog-homePage', [
+    //             'latestNews' => $allNews
+    //         ])->render();
 
-            return response()->json([
-                'success' => true,
-                'html' => $html,
-                'count' => $allNews->count()
-            ]);
+    //         return response()->json([
+    //             'success' => true,
+    //             'html' => $html,
+    //             'count' => $allNews->count()
+    //         ]);
 
-        } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Erro ao filtrar notícias: ' . $e->getMessage()
-            ]);
-        }
-    }
+    //     } catch (\Exception $e) {
+    //         return response()->json([
+    //             'success' => false,
+    //             'message' => 'Erro ao filtrar notícias: ' . $e->getMessage()
+    //         ]);
+    //     }
+    // }
 }

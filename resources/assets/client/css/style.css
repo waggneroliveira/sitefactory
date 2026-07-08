@@ -12,6 +12,7 @@
     --grey-color-light: #E6E6E6;
     --white-color: #ffffff;
     --black-color: #000;
+    --gradient: rgb(16 81 61 / 50%);
     --text-color-size: #585858;
 
     scroll-behavior: smooth;
@@ -323,7 +324,7 @@ body {
     left: 0px;
 }
 .stat-number{
-    color: rgb(16 81 61 / 50%);
+    color: var(--gradient);
 }
 
 /* =========================
