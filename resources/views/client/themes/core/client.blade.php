@@ -60,8 +60,8 @@
     <link href="{{ asset('build/client/css/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="preload" href="{{ asset('build/client/css/bootstrap-icons/bootstrap-icons.css') }}" as="style" onload="this.rel='stylesheet'">
     <link href="{{ asset('build/client/css/default.css') }}" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="{{ asset("build/client/css/{$theme->template_variation}/style.css") }}">   
-    <link href="{{ asset("build/client/css/{$theme->template_variation}/responsivo.css") }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{ asset("build/client/css/{$theme->slug}/{$theme->template_variation}/style.css") }}">   
+    <link href="{{ asset("build/client/css/{$theme->slug}/{$theme->template_variation}/responsivo.css") }}" rel="stylesheet" type="text/css" />
 
     <script type=application/ld+json>
         {
