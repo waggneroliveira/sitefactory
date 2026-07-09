@@ -3,13 +3,13 @@
 @section('content')
 
     {{-- Section Hero --}}
-    @include('client.themes.component.slide.tp-01', ['slides' => $slides])
+    @include("client.themes.component.slide.{$theme->slug}.{$theme->template_variation}", ['slides' => $slides])
     
     {{-- Section Topic --}}
     @include('client.themes.component.topic', ['topics' => $topics])
 
     {{-- Section About --}}
-    @include('client.themes.component.about', ['about' => $about])
+    @include("client.themes.component.about.{$theme->slug}.{$theme->template_variation}", ['about' => $about])
 
     {{-- Section parameter --}}
     @include('client.themes.component.parameter', ['statute' => $statute])

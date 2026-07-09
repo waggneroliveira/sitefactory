@@ -3,7 +3,7 @@
 @section('content')
 
     {{-- Section Hero --}}
-    @include('client.themes.component.slide.tp-02', ['slides' => $slides])
+    @include("client.themes.component.slide.{$theme->slug}.{$theme->template_variation}", ['slides' => $slides])
     
  
 @endsection

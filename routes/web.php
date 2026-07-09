@@ -96,8 +96,8 @@ Route::get('blog/filter/{category?}', [HomePageController::class, 'filterByCateg
 Route::post('/download-ficha/store', [DownloadFichaController::class, 'store'])
 ->name('download.ficha.store');
 
-View::composer('client.themes.core.client', function ($view) {
-    $theme = TemplateTheme::first();
+// View::composer('client.themes.core.client', function ($view) {
+//     $theme = TemplateTheme::first();
 
-    return $view->with('theme', $theme);
-});
+//     return $view->with('theme', $theme);
+// });

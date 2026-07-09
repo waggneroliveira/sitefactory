@@ -214,14 +214,14 @@
     </style>
 
     {{-- header tp-01 --}}
-    @include("client.themes.component.core.header.{$theme->template_variation}")
+    @include("client.themes.component.core.header.{$theme->slug}.{$theme->template_variation}")
 
     <main>
         @yield('content') 
     </main>
 
     {{-- header tp-01 --}}
-    @include("client.themes.component.core.footer.{$theme->template_variation}")
+    @include("client.themes.component.core.footer.{$theme->slug}.{$theme->template_variation}")
 
     <script src="https://cdn.ckeditor.com/4.22.1/basic/ckeditor.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>

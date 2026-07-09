@@ -7,6 +7,7 @@ use App\Contracts\Repositories\AboutRepositoryInterface;
 use App\Contracts\Repositories\BrandRepositoryInterface;
 use App\Contracts\Repositories\ContactRepositoryInterface;
 use App\Models\SettingEmail;
+use App\Models\TemplateTheme;
 use App\Repositories\AboutRepository;
 use App\Repositories\AnnouncementRepository;
 use App\Repositories\BlogRepository;
@@ -45,5 +46,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Carbon::setLocale('pt_BR');
+        
+        view()->composer('*', function ($view) {
+            $theme = TemplateTheme::first();
+            $view->with('theme', $theme);
+        });
     }
 }
