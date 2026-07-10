@@ -21,11 +21,12 @@
                                 <div class="container">
                                     <div class="row justify-content-between vh">
                                         <div class="col-lg-5 mt-150">
-                                            <h1 class="hero-title font-changa font-60 font-bold mb-1">
+                                            <span class="font-changa font-15 font-semibold text-uppercase color-green">Encontre o imóvel perfeito</span>
+                                            <h1 class="hero-title font-changa font-60 font-bold mb-1 mt-3">
                                                 {{ $slide->title }}
                                             </h1>
 
-                                            <h1 class="hero-subtitle font-changa font-40 font-bold">
+                                            <h2 class="hero-subtitle font-changa font-40 font-bold">
                                                 começa aqui!
                                             </h1>
 
@@ -103,7 +104,7 @@
 
 <style>
     .vh{
-       min-height: 80vh; 
+       min-height: 90vh; 
     }
     .mt-150{
         margin-top: 150px;
