@@ -4,21 +4,21 @@
 
     {{-- Section Hero --}}
     @include("client.themes.component.slide.{$theme->slug}.{$theme->template_variation}", ['slides' => $slides])
-    
-    {{-- Section Topic --}}
-    @include("client.themes.component.topic.{$theme->slug}.{$theme->template_variation}", ['topics' => $topics])
-
-    {{-- Section About --}}
-    @include("client.themes.component.about.{$theme->slug}.{$theme->template_variation}", ['about' => $about])
 
     {{-- Section parameter --}}
     @include("client.themes.component.parameter.{$theme->slug}.{$theme->template_variation}", ['statute' => $statute])
+
+    {{-- Section About --}}
+    @include("client.themes.component.about.{$theme->slug}.{$theme->template_variation}", ['about' => $about])
+    
+    {{-- Section Topic --}}
+    @include("client.themes.component.topic.{$theme->slug}.{$theme->template_variation}", ['topics' => $topics])
 
     {{-- Section Step to step --}}
     @include("client.themes.component.steptostep.{$theme->slug}.{$theme->template_variation}", ['benefitTopics' => $benefitTopics])
 
     {{-- Section LetsGo --}}
-    @include("client.themes.component.paralax.{$theme->slug}.{$theme->template_variation}", ['benefitTopics' => $benefitTopics])
+    @include("client.themes.component.paralax.{$theme->slug}.{$theme->template_variation}", ['letsgo' => $letsgo])
 
     {{-- Section ProductCategory--}}
     @include("client.themes.component.product.{$theme->slug}.home.category.{$theme->template_variation}", ['productCategorieHighlights' => $productCategorieHighlights])

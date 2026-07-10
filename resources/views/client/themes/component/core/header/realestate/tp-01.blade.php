@@ -20,44 +20,38 @@
                 <ul class="navbar-nav mx-auto align-items-lg-center gap-1">
 
                     <li class="nav-item">
-                        <a class="nav-link text-white font-changa font-18 font-regular font-header active position-relative" href="#">
+                        <a class="nav-link text-white font-changa font-16 font-regular font-header active position-relative" href="#">
                             Home
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-white font-changa font-18 font-regular font-header" href="#">
+                        <a class="nav-link text-white font-changa font-16 font-regular font-header" href="#">
                             Quem Somos
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-white font-changa font-18 font-regular font-header" href="#">
+                        <a class="nav-link text-white font-changa font-16 font-regular font-header" href="#">
                             Imóveis
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-white font-changa font-18 font-regular font-header" href="#">
+                        <a class="nav-link text-white font-changa font-16 font-regular font-header" href="#">
                             Engenharia
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-white font-changa font-18 font-regular font-header" href="#">
+                        <a class="nav-link text-white font-changa font-16 font-regular font-header" href="#">
                             Blog
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-white font-changa font-18 font-regular font-header" href="#">
+                        <a class="nav-link text-white font-changa font-16 font-regular font-header" href="#">
                             Contato
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link text-white font-changa font-18 font-regular font-header" href="#">
-                            Portal do Cliente
                         </a>
                     </li>
 

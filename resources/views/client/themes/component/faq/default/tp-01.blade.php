@@ -35,7 +35,7 @@
                 </div>
             </div>
         @endif
-
+        
         <!-- COLUNA DIREITA -->
         <div class="col-lg-7">
             <div class="accordion" id="faqAccordion">

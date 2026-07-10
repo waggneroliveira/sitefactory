@@ -220,7 +220,7 @@
         @yield('content') 
     </main>
 
-    {{-- header tp-01 --}}
+    {{-- footer tp-01 --}}
     @include("client.themes.component.core.footer.{$theme->slug}.{$theme->template_variation}")
 
     <script src="https://cdn.ckeditor.com/4.22.1/basic/ckeditor.js"></script>
