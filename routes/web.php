@@ -68,6 +68,10 @@ Route::get('/senha-alterada-com-sucesso', function () {
     return view('emails.password-success-client-reset');
 })->name('client-success-reset-password');
 
+Route::get('/imovel', function () {
+    return view('client.themes.realestate.tp-01.blades.imovel');
+})->name('imovel');
+
 
 Route::middleware([AuthClientMiddleware::class])->group(function () {
     Route::put('/client/update', [ClientController::class, 'update'])->name('client.update');
