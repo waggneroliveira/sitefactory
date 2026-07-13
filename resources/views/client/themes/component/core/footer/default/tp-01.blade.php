@@ -1,4 +1,4 @@
-<footer class="bg-green text-white pt-5 pb-3">
+<footer class="bg-yellow text-white pt-5 pb-3">
     <div class="container">
 
         <!-- Linha principal -->

@@ -10,7 +10,7 @@
         </div>
         <div class="row g-4">
             <!-- Card 1 -->
-            @for($i = 0; $i < 8; $i++)              
+            @for($i = 0; $i < 4; $i++)              
               <div class="col-md-6 col-lg-3">
                   <div class="card bg-transparent border-1 shadow-sm card-shadow h-100">
                       <div class="image position-relative">
@@ -41,7 +41,7 @@
         </div>
         <!-- chamada extra -->
         <div class="text-center mt-5">
-            <a href="#" class="btn btn-dark btn-lg px-5 rounded-pill">Ver todos os imóveis <i class="bi bi-chevron-right"></i></a>
+            <a href="#" class="btn bg-yellow border text-white border-white px-5 py-3 rounded-3 font-changa font-16 font-semibold">Ver todos os imóveis <i class="bi bi-chevron-right"></i></a>
         </div>
     </div>
 </section>
