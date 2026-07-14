@@ -45,7 +45,7 @@
             </div>
 
             <!-- Redes sociais -->
-            @if ($contact && (
+            @if (isset($contact) && (
                 $contact->link_insta ||
                 $contact->link_face ||
                 $contact->link_tik_tok
