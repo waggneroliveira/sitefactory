@@ -4,24 +4,15 @@
 
 
     <div class="banner-inner blog container-fluid d-flex justify-content-center align-items-center flex-column position-relative" style="--banner-bg: url('../images/banner-product.png');">
-        <span class="color-yellow font-changa font-16 font-bold position-relative z-3 text-center">Produtos </span>
-        <h1 class="font-mobi font-changa font-40 font-bold text-white position-relative z-3 mt-2">Catálogo</h1>
+        <span class="color-yellow font-changa font-16 font-bold position-relative z-3 text-center">Imóvel </span>
+        <h1 class="font-mobi font-changa font-40 font-bold text-white position-relative z-3 mt-2">Casa Riviera</h1>
         <p class="font-changa text-center font-15 font-regular text-white position-relative z-3">Confira aqui a seleção dos nossos melhores produtos.</p>
     </div>
  
     <div class="container my-5">
         <div class="row g-4">
             <!-- GALERIA -->
-            <div class="col-lg-5">
-               <div class="step-actions mt-4 d-flex justify-content-start mb-3">
-                  <a href="" class="rounded-3 py-1 px-3 btn font-changa bg-green text-white font-18 font-medium text-decoration-none" rel="noopener noreferrer">
-                        <svg class="me-2" width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.23696 0L-3.8147e-05 6.237L6.23696 12.474L8.00411 10.7069L3.55505 6.237L8.0249 1.76715L6.23696 0Z" fill="#0E523E"/>
-                        </svg>
-
-                        Voltar
-                  </a>
-               </div>
+            <div class="col-12">
                <div class="product-gallery p-0">
                   
                      <div class="custom-gallery-carousel position-relative">
@@ -30,15 +21,23 @@
                                  <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
                                  <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-1.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
                                  <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-2.avif')}}" loading="lazy" alt="Imagem 1" /></div>
+                                 <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
+                                 <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-1.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
+                                 <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-2.avif')}}" loading="lazy" alt="Imagem 1" /></div>
+                                 <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-2.avif')}}" loading="lazy" alt="Imagem 1" /></div>
                            </div>
                         </div>
 
                         <!-- Fim das setas -->
-                        <div class="mt-3 100 gap-1">
-                           <div class="swiper gallery-thumbs w-100">
+                        <div class="mt-130 gap-1">
+                           <div class="swiper gallery-thumbs w-75">
                                  <div class="swiper-wrapper d-flex justify-content-center align-items-center">
                                     <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
                                     <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv-1.jpg')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
+                                    <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv-2.avif')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
+                                    <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
+                                    <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv-1.jpg')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
+                                    <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv-2.avif')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
                                     <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv-2.avif')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
                                  </div>
                            </div>
@@ -52,24 +51,24 @@
                </div>
             </div>
             <!-- INFO PRODUTO -->            
-            <div class="col-lg-7"> {{-- {{ !$product->galleries->count() ? 'w-100' : '' }} --}}
+            <div class="col-lg-12"> {{-- {{ !$product->galleries->count() ? 'w-100' : '' }} --}}
 
-                <h2 class="font-mobi font-changa text-center text-lg-start font-48 font-bold color-green">Casa Riviera</h2>
+                <h2 class="font-mobi font-changa text-center font-48 font-bold color-green">Casa Riviera</h2>
 
-                <div class="mb-2 text-center text-lg-start ">
+                <div class="mb-2 text-center">
                     <span class="font-changa font-12 bg-yellow px-2 rounded-0 font-medium color-green">Lançamento</span>
                     <span class="font-changa font-12 bg-yellow px-2 rounded-0 font-medium color-green">A Venda</span>
                 </div>
 
-                <p class="color-grey text-center text-lg-start font-changa font-16 font-regular">
+                <p class="color-grey text-center font-changa font-16 font-regular">
                     Cães Adultos Raças Médias e Grandes
                 </p>
 
                 <!-- TAMANHOS -->
                 <div class="mb-3">
-                    <div class="row flex-column justify-content-center justify-content-lg-start mt-3">
-                        <div class="btn-group m-auto m-lg-0 col-12" role="group">
-                            <ul class="list-unstyled d-flex justify-content-center justify-content-lg-start gap-3">
+                    <div class="row flex-column justify-content-center mt-3">
+                        <div class="btn-group justify-content-center" role="groqp">
+                            <ul class="list-unstyled d-flex justify-content-center gap-3">
                                 <li class="d-flex align-items-center mb-2">
                                     <i class="fa-solid fa-bed me-2"></i>
                                     4 quartos
@@ -102,7 +101,7 @@
                             </ul>
                         </div>
 
-                        <div class="d-flex justify-content-center justify-content-lg-start mt-3 mt-lg-0 align-items-center col-12">
+                        <div class="d-flex justify-content-center mt-3 mt-lg-0 align-items-center col-12">
                             
                             <div class="w-auto m-auto m-lg-0 mt-3 mt-lg-0 d-flex justify-content-center gap-2 align-items-center btn-header btn bg-yellow rounded-3 px-3">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,15 +131,45 @@
                 </div>
 
             </div>
+
+            <div class="col-12">
+                <h2 class="font-mobi font-changa text-center font-48 font-bold color-green">Planta baixa</h2>
+
+                <div class="galery-content">
+                    <div class="swiper gallery-planta-baixa rounded-2">
+                        <div class="swiper-wrapper">
+                                <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
+                                <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-1.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
+                                <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-2.avif')}}" loading="lazy" alt="Imagem 1" /></div>
+                                <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <style>
+        .gallery-thumbs .swiper-slide{
+            opacity: 1;
+        }
+        .mt-130{
+            margin-top: -130px;
+        }
+        .banner-inner{
+            margin-top: 100px;
+        }
         .product-description .desc-title:before{
             border-top: 15px solid var(--green-color);
         }
+        .gallery-planta-baixa .swiper-slide img{
+            width: 320px;
+        }
+        .gallery-top .swiper-slide{
+            height: 600px;
+        }
         .gallery-top .swiper-slide img{
-            width: 524px;
+            width: 100%;
             object-fit: cover;
         }
         .gallery-thumbs .swiper-slide img{
@@ -149,12 +178,21 @@
         }
         .gallery-thumbs .swiper-slide-thumb-active{
             border: inherit;
+            height: 130px !important;
+        }
+        .gallery-thumbs .swiper-slide img{
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+        .gallery-thumbs .swiper-slide-thumb-active img{
+            transform: scale(1.2);
+            transition: all 0.3s ease;
         }
         .thumbs-width{
             height: 110px !important;
         }
         .navigation-swiper{
-            bottom: 58px;
+            top: 0;
         }
     </style>
 @endsection

@@ -172,6 +172,19 @@
   }
 
   /* ==========================
+     SWIPER – GALERIA PLANTA BAIXA
+  ========================== */
+    new Swiper(".gallery-planta-baixa", {
+      spaceBetween: 0,
+      slidesPerView: 4,
+      loopedSlides: 7,
+      breakpoints: {
+        360: { slidesPerView: 2 },
+        680: { slidesPerView: 2 },
+      },
+    });
+
+  /* ==========================
      SWIPER – GALERIA COM THUMBS
   ========================== */
   window.addEventListener("load", function () {
@@ -190,8 +203,8 @@
       breakpoints: {
         360: { slidesPerView: 2.2 },
         680: { slidesPerView: 4 },
-        768: { slidesPerView: 4 },
-        1024: { slidesPerView: 4 },
+        768: { slidesPerView: 7 },
+        1024: { slidesPerView: 7 },
       },
     });
 
