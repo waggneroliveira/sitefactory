@@ -1,23 +1,17 @@
 @extends('client.themes.core.client')
 
-@section('content')
-
-    <div class="banner-inner blog container-fluid d-flex justify-content-center align-items-center flex-column position-relative" style="--banner-bg: url('../images/banner-product.png');">
-        <span class="color-yellow font-changa font-16 font-bold position-relative z-3 text-center">Imóvel </span>
-        <h1 class="font-mobi font-changa font-40 font-bold text-white position-relative z-3 mt-2">Casa Riviera</h1>
-        <p class="font-changa text-center font-15 font-regular text-white position-relative z-3">Confira aqui a seleção dos nossos melhores produtos.</p>
-    </div>
- 
-    <div class="container my-5">
-        <div class="row g-4">
+@section('content') 
+    <div class="container-fluid mt-130 p-0">
+        <div class="col-12">
             <!-- GALERIA -->
-            <section id="gallery" class="col-12">
+            <section id="gallery" class="container-fluid p-0 col-12">
                <div class="product-gallery p-0">
                   
                      <div class="custom-gallery-carousel position-relative">
                         <div class="swiper gallery-top border rounded-2">
                            <div class="swiper-wrapper">
                                  <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
+                                 <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-1.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
                                  <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-1.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
                                  <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-2.avif')}}" loading="lazy" alt="Imagem 1" /></div>
                                  <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
@@ -28,10 +22,11 @@
                         </div>
 
                         <!-- Fim das setas -->
-                        <div class="mt-130 gap-1">
-                           <div class="swiper gallery-thumbs w-75">
+                        <div class="gap-1 container">
+                           <div class="swiper gallery-thumbs col-12 mt-4">
                                  <div class="swiper-wrapper d-flex justify-content-center align-items-center">
                                     <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
+                                    <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv-1.jpg')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
                                     <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv-1.jpg')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
                                     <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv-2.avif')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
                                     <div class="swiper-slide thumbs-width"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Thumb 1" class="w-100 h-100 cover" /></div>
@@ -50,7 +45,7 @@
                </div>
             </section>
             <!-- INFO PRODUTO -->            
-            <div id="info-imovel" class="col-lg-12"> {{-- {{ !$product->galleries->count() ? 'w-100' : '' }} --}}
+            <div id="info-imovel" class="container col-lg-12"> {{-- {{ !$product->galleries->count() ? 'w-100' : '' }} --}}
 
                 <h2 class="font-mobi font-changa text-center font-40 font-semibold color-green">Casa Riviera</h2>
 
@@ -131,7 +126,188 @@
 
             </div>
 
-            <section id="floor-plan" class="col-12 mt-5">
+            <section class="construction-progress py-0 mt-5">
+                <div class="container-fluid px-0">
+                    <div class="row g-0">
+                        <!-- GALERIA -->
+                        <div class="col-lg-6">
+                            <div class="swiper obraSwiper h-100">
+                                <div class="swiper-wrapper">
+                                    <!-- IMAGEM -->
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="{{asset('build/client/images/imv-1.jpg')}}"
+                                            class="w-100 h-100 object-fit-cover"
+                                            alt="">
+                                    </div>
+                                    <!-- IMAGEM -->
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="{{asset('build/client/images/imv.jpg')}}"
+                                            class="w-100 h-100 object-fit-cover"
+                                            alt="">
+                                    </div>
+                                    <!-- VÍDEO -->
+                                    <div class="swiper-slide">
+                                        <div class="ratio ratio-16x9 h-100">
+                                            <iframe
+                                                src="https://www.youtube.com/embed/Q2jwQPfOLoE?si=_B8gqn0Fo96fmOdx"
+                                                allowfullscreen>
+                                            </iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <!-- PROGRESSO -->
+                        <div class="col-lg-6 bg-yellow">
+                            <div class="p-4 h-100 d-flex flex-column justify-content-center">
+                                <h2 class="font-changa font-28 font-bold text-center mb-2 text-white">
+                                    Avanço da Obra
+                                </h2>
+                                <small class="text-center text-white mb-4">
+                                    Setembro • 2025
+                                </small>
+                                <!-- Item -->
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-4 font-changa font-16 font-bold text-white">
+                                        Serviços Preliminares
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="progress rounded-pill">
+                                            <div
+                                                class="progress-bar bg-dark"
+                                                style="width:100%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto font-changa font-16 font-bold text-white">
+                                        100%
+                                    </div>
+                                </div>
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-4 font-changa font-16 font-bold text-white ">
+                                        Terraplanagem
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="progress rounded-pill">
+                                            <div
+                                                class="progress-bar bg-dark"
+                                                style="width:100%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto font-changa font-16 font-bold text-white">
+                                        100%
+                                    </div>
+                                </div>
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-4 font-changa font-16 font-bold text-white ">
+                                        Fundação
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="progress rounded-pill">
+                                            <div
+                                                class="progress-bar bg-dark"
+                                                style="width:90%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto font-changa font-16 font-bold text-white">
+                                        90%
+                                    </div>
+                                </div>
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-4 font-changa font-16 font-bold text-white ">
+                                        Estrutura
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="progress rounded-pill">
+                                            <div
+                                                class="progress-bar bg-dark"
+                                                style="width:78%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto font-changa font-16 font-bold text-white">
+                                        78%
+                                    </div>
+                                </div>
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-4 font-changa font-16 font-bold text-white ">
+                                        Instalações
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="progress rounded-pill">
+                                            <div
+                                                class="progress-bar bg-dark"
+                                                style="width:60%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto font-changa font-16 font-bold text-white">
+                                        60%
+                                    </div>
+                                </div>
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-4 font-changa font-16 font-bold text-white ">
+                                        Acabamento
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="progress rounded-pill">
+                                            <div
+                                                class="progress-bar bg-dark"
+                                                style="width:42%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto font-changa font-16 font-bold text-white">
+                                        42%
+                                    </div>
+                                </div>
+                                <div class="row align-items-center mb-3">
+                                    <div class="col-4 font-changa font-16 font-bold text-white ">
+                                        Infraestrutura
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="progress rounded-pill">
+                                            <div
+                                                class="progress-bar bg-dark"
+                                                style="width:35%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto font-changa font-16 font-bold text-white">
+                                        35%
+                                    </div>
+                                </div>
+                                <hr class="my-3">
+                                <div class="row align-items-center">
+                                    <div class="col-4 font-changa font-18 font-bold text-white">
+                                        Entrega do Empreendimento
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="progress rounded-pill">
+                                            <div
+                                                class="progress-bar bg-danger"
+                                                style="width:68%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto font-changa font-16 font-bold text-white fs-5">
+                                        68%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="floor-plan" class="container col-12 my-5">
                 <h2 class="font-mobi font-changa text-center font-48 font-semibold color-green">Planta baixa</h2>
 
                 <div class="galery-content mt-5">
@@ -151,137 +327,138 @@
                 </div>
             </section>
         </div>
+
+        <section class="maps">
+            <div class="content-maps col-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7777.318333117682!2d-38.32499230933179!3d-12.929614099527441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71617d70acdd313%3A0x92a7d60129a42c89!2sPraia%20do%20Flamengo!5e0!3m2!1spt-BR!2sbr!4v1784552355631!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </section>
+    
+        <section class="py-0 bg-white">
+            <div class="container-fluid px-0">
+    
+                <div class="row g-0 align-items-center">
+    
+                    <!-- Imagem -->
+                    <div class="col-lg-5 d-none d-lg-block">
+                        <img src="{{asset('build/client/images/form.png')}}"
+                            class="img-fluid w-100 h-100 object-fit-cover"
+                            style="min-height:650px;"
+                            alt="Contato">
+                    </div>
+    
+                    <!-- Conteúdo -->
+                    <div class="col-lg-7">
+                        <div class="px-4 px-lg-5 pt-5">
+    
+                            <h2 class="display-6 fw-light text-dark mb-2">
+                                Tenho interesse
+                            </h2>
+    
+                            <div class="mb-5">
+                                <div style="width:120px;height:4px;background:var(--green-color);border-radius:20px;"></div>
+                            </div>
+    
+                            <!-- Informações -->
+                            <div class="row gy-4 mb-5">
+    
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fa-solid fa-phone fs-4 color-yellow me-3 mt-1"></i>
+    
+                                        <div>
+                                            <small class="text-muted d-block font-changa font-14 font-regular">
+                                                Telefone
+                                            </small>
+    
+                                            <strong class="font-changa font-16 font-semibold">
+                                                (71) 99999-9999
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fa-solid fa-envelope fs-4 color-yellow me-3 mt-1"></i>
+    
+                                        <div>
+                                            <small class="text-muted d-block font-changa font-14 font-regular">
+                                                E-mail
+                                            </small>
+    
+                                            <strong class="font-changa font-16 font-semibold">
+                                                contato@empresa.com.br
+                                            </strong>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fa-solid fa-location-dot fs-4 color-yellow me-3 mt-1"></i>
+    
+                                        <div>
+                                            <small class="text-muted d-block font-changa font-14 font-regular">
+                                                Endereço
+                                            </small>
+    
+                                            <span class="text-muted font-changa font-16 font-semibold">
+                                                Rua Exemplo, 123<br>
+                                                Guarajuba - BA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+    
+                            <!-- Formulário -->
+                            <form>
+    
+                                <div class="row g-4">
+    
+                                    <div class="col-12">
+                                        <input
+                                            type="text"
+                                            class="form-control rounded-pill py-2 px-4 h-45 font-changa font-15 font-regular"
+                                            placeholder="Nome">
+                                    </div>
+    
+                                    <div class="col-md-7">
+                                        <input
+                                            type="email"
+                                            class="form-control rounded-pill py-2 px-4 h-45 font-changa font-15 font-regular"
+                                            placeholder="E-mail">
+                                    </div>
+    
+                                    <div class="col-md-5">
+                                        <input
+                                            type="text"
+                                            class="form-control rounded-pill py-2 px-4 h-45 font-changa font-15 font-regular"
+                                            placeholder="Telefone">
+                                    </div>
+    
+                                    <div class="col-12 text-lg-end text-center">
+                                        <button
+                                            class="btn btn-lg rounded-pill px-4 py-2 text-white h-45 font-changa font-16 font-regular bg-yellow text-decoration-none" >
+                                            Solicitar Contato
+                                        </button>
+                                    </div>
+    
+                                </div>
+    
+                            </form>
+    
+                        </div>
+                    </div>
+    
+                </div>
+    
+            </div>
+        </section>
     </div>
 
-    <section id="maps" class="container-fluid p-0">
-        <div class="content-maps col-12">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7777.318333117682!2d-38.32499230933179!3d-12.929614099527441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71617d70acdd313%3A0x92a7d60129a42c89!2sPraia%20do%20Flamengo!5e0!3m2!1spt-BR!2sbr!4v1784552355631!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        </div>
-    </section>
-
-    <section class="py-0 bg-white">
-        <div class="container-fluid px-0">
-
-            <div class="row g-0 align-items-center">
-
-                <!-- Imagem -->
-                <div class="col-lg-5 d-none d-lg-block">
-                    <img src="{{asset('build/client/images/form.png')}}"
-                        class="img-fluid w-100 h-100 object-fit-cover"
-                        style="min-height:650px;"
-                        alt="Contato">
-                </div>
-
-                <!-- Conteúdo -->
-                <div class="col-lg-7">
-                    <div class="px-4 px-lg-5 pt-5">
-
-                        <h2 class="display-6 fw-light text-dark mb-2">
-                            Tenho interesse
-                        </h2>
-
-                        <div class="mb-5">
-                            <div style="width:120px;height:4px;background:var(--green-color);border-radius:20px;"></div>
-                        </div>
-
-                        <!-- Informações -->
-                        <div class="row gy-4 mb-5">
-
-                            <div class="col-md-4">
-                                <div class="d-flex align-items-start">
-                                    <i class="fa-solid fa-phone fs-4 color-yellow me-3 mt-1"></i>
-
-                                    <div>
-                                        <small class="text-muted d-block font-changa font-14 font-regular">
-                                            Telefone
-                                        </small>
-
-                                        <strong class="font-changa font-16 font-semibold">
-                                            (71) 99999-9999
-                                        </strong>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="d-flex align-items-start">
-                                    <i class="fa-solid fa-envelope fs-4 color-yellow me-3 mt-1"></i>
-
-                                    <div>
-                                        <small class="text-muted d-block font-changa font-14 font-regular">
-                                            E-mail
-                                        </small>
-
-                                        <strong class="font-changa font-16 font-semibold">
-                                            contato@empresa.com.br
-                                        </strong>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="d-flex align-items-start">
-                                    <i class="fa-solid fa-location-dot fs-4 color-yellow me-3 mt-1"></i>
-
-                                    <div>
-                                        <small class="text-muted d-block font-changa font-14 font-regular">
-                                            Endereço
-                                        </small>
-
-                                        <span class="text-muted font-changa font-16 font-semibold">
-                                            Rua Exemplo, 123<br>
-                                            Guarajuba - BA
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Formulário -->
-                        <form>
-
-                            <div class="row g-4">
-
-                                <div class="col-12">
-                                    <input
-                                        type="text"
-                                        class="form-control rounded-pill py-2 px-4 h-45 font-changa font-15 font-regular"
-                                        placeholder="Nome">
-                                </div>
-
-                                <div class="col-md-7">
-                                    <input
-                                        type="email"
-                                        class="form-control rounded-pill py-2 px-4 h-45 font-changa font-15 font-regular"
-                                        placeholder="E-mail">
-                                </div>
-
-                                <div class="col-md-5">
-                                    <input
-                                        type="text"
-                                        class="form-control rounded-pill py-2 px-4 h-45 font-changa font-15 font-regular"
-                                        placeholder="Telefone">
-                                </div>
-
-                                <div class="col-12 text-lg-end text-center">
-                                    <button
-                                        class="btn btn-lg rounded-pill px-4 py-2 text-white h-45 font-changa font-16 font-regular bg-yellow text-decoration-none" >
-                                        Solicitar Contato
-                                    </button>
-                                </div>
-
-                            </div>
-
-                        </form>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
 
     <style>
         .imovel-navigation-swiper{
@@ -307,7 +484,7 @@
             opacity: 1;
         }
         .mt-130{
-            margin-top: -130px;
+            margin-top: 99px;
         }
         .banner-inner{
             margin-top: 100px;
@@ -327,15 +504,15 @@
         }
         .gallery-thumbs .swiper-slide img{
             object-fit: cover;
-            max-width: 125px;
         }
         .gallery-thumbs .swiper-slide-thumb-active{
             border: inherit;
             height: 130px !important;
+            z-index: 5;
         }
         .gallery-thumbs .swiper-slide img{
             transform: scale(1);
-            transition: all 0.3s ease;
+            transition: all 0.3s ease;            
         }
         .gallery-thumbs .swiper-slide-thumb-active img{
             transform: scale(1.2);
@@ -367,6 +544,58 @@
 
             .container-fluid .row{
                 flex-direction:column;
+            }
+
+        }
+
+        .construction-progress .swiper{
+            height:530px !important;
+        }
+
+        .construction-progress .swiper-slide{
+            overflow:hidden;
+        }
+
+        .construction-progress img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+        .construction-progress iframe{
+            width:100%;
+            height:100%;
+        }
+
+        .construction-progress .swiper-button-next,
+        .construction-progress .swiper-button-prev{
+
+            width:60px;
+            height:60px;
+            border-radius:50%;
+            background:var(--yellow-color);
+            color:#fff;
+        }
+
+        .construction-progress .swiper-button-next::after,
+        .construction-progress .swiper-button-prev::after{
+            font-size:24px;
+            font-weight:bold;
+        }
+
+        .progress{
+            background:#c3c3c3;
+            height: 20px;
+        }
+
+        .progress-bar{
+            background:var(--green-color) !important;
+        }
+
+        @media(max-width:991px){
+
+            .construction-progress .swiper{
+                height:350px;
             }
 
         }

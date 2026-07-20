@@ -171,6 +171,25 @@
     });
   }
 
+    new Swiper('.obraSwiper', {
+
+      loop:true,
+
+      spaceBetween:0,
+
+      autoplay:{
+          delay:5000
+      },
+
+      pagination:false,
+
+      navigation:{
+          nextEl:'.swiper-button-next',
+          prevEl:'.swiper-button-prev'
+      }
+
+  });
+
   /* ==========================
      SWIPER – GALERIA PLANTA BAIXA
   ========================== */
@@ -198,7 +217,7 @@
     if (!thumbsEl || !topEl || typeof Swiper === "undefined") return;
 
     const thumbsSwiper = new Swiper(".gallery-thumbs", {
-      spaceBetween: 0,
+      spaceBetween: 10,
       slidesPerView: 4,
       freeMode: true,
       watchSlidesProgress: true,
@@ -208,7 +227,7 @@
         360: { slidesPerView: 2.2 },
         680: { slidesPerView: 4 },
         768: { slidesPerView: 7 },
-        1024: { slidesPerView: 7 },
+        1024: { slidesPerView: 8 },
       },
     });
 
