@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <div class="banner-inner blog container-fluid d-flex justify-content-center align-items-center flex-column position-relative" style="--banner-bg: url('../images/banner-product.png');">
         <span class="color-yellow font-changa font-16 font-bold position-relative z-3 text-center">Imóvel </span>
         <h1 class="font-mobi font-changa font-40 font-bold text-white position-relative z-3 mt-2">Casa Riviera</h1>
@@ -12,7 +11,7 @@
     <div class="container my-5">
         <div class="row g-4">
             <!-- GALERIA -->
-            <div class="col-12">
+            <section id="gallery" class="col-12">
                <div class="product-gallery p-0">
                   
                      <div class="custom-gallery-carousel position-relative">
@@ -49,11 +48,11 @@
                         </div>
                      </div>
                </div>
-            </div>
+            </section>
             <!-- INFO PRODUTO -->            
-            <div class="col-lg-12"> {{-- {{ !$product->galleries->count() ? 'w-100' : '' }} --}}
+            <div id="info-imovel" class="col-lg-12"> {{-- {{ !$product->galleries->count() ? 'w-100' : '' }} --}}
 
-                <h2 class="font-mobi font-changa text-center font-48 font-bold color-green">Casa Riviera</h2>
+                <h2 class="font-mobi font-changa text-center font-40 font-semibold color-green">Casa Riviera</h2>
 
                 <div class="mb-2 text-center">
                     <span class="font-changa font-12 bg-yellow px-2 rounded-0 font-medium color-green">Lançamento</span>
@@ -132,24 +131,178 @@
 
             </div>
 
-            <div class="col-12">
-                <h2 class="font-mobi font-changa text-center font-48 font-bold color-green">Planta baixa</h2>
+            <section id="floor-plan" class="col-12 mt-5">
+                <h2 class="font-mobi font-changa text-center font-48 font-semibold color-green">Planta baixa</h2>
 
-                <div class="galery-content">
+                <div class="galery-content mt-5">
                     <div class="swiper gallery-planta-baixa rounded-2">
                         <div class="swiper-wrapper">
-                                <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
-                                <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-1.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
-                                <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv-2.avif')}}" loading="lazy" alt="Imagem 1" /></div>
-                                <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/imv.jpg')}}" loading="lazy" alt="Imagem 1" /></div>
+                            <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/plan.png')}}" loading="lazy" alt="Imagem 1" /></div>
+                            <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/plan.png')}}" loading="lazy" alt="Imagem 1" /></div>
+                            <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/plan.png')}}" loading="lazy" alt="Imagem 1" /></div>
+                            <div class="swiper-slide d-flex justify-content-center align-items-center"><img src="{{asset('build/client/images/plan.png')}}" loading="lazy" alt="Imagem 1" /></div>
+                        </div>
+                        <!-- Setas de navegação do Swiper -->
+                        <div class="imovel-navigation-swiper">
+                           <div class="swiper-button-prev"></div>
+                           <div class="swiper-button-next"></div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 
+    <section id="maps" class="container-fluid p-0">
+        <div class="content-maps col-12">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7777.318333117682!2d-38.32499230933179!3d-12.929614099527441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71617d70acdd313%3A0x92a7d60129a42c89!2sPraia%20do%20Flamengo!5e0!3m2!1spt-BR!2sbr!4v1784552355631!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+    </section>
+
+    <section class="py-0 bg-white">
+        <div class="container-fluid px-0">
+
+            <div class="row g-0 align-items-center">
+
+                <!-- Imagem -->
+                <div class="col-lg-5 d-none d-lg-block">
+                    <img src="{{asset('build/client/images/form.png')}}"
+                        class="img-fluid w-100 h-100 object-fit-cover"
+                        style="min-height:650px;"
+                        alt="Contato">
+                </div>
+
+                <!-- Conteúdo -->
+                <div class="col-lg-7">
+                    <div class="px-4 px-lg-5 pt-5">
+
+                        <h2 class="display-6 fw-light text-dark mb-2">
+                            Tenho interesse
+                        </h2>
+
+                        <div class="mb-5">
+                            <div style="width:120px;height:4px;background:var(--green-color);border-radius:20px;"></div>
+                        </div>
+
+                        <!-- Informações -->
+                        <div class="row gy-4 mb-5">
+
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-start">
+                                    <i class="fa-solid fa-phone fs-4 color-yellow me-3 mt-1"></i>
+
+                                    <div>
+                                        <small class="text-muted d-block font-changa font-14 font-regular">
+                                            Telefone
+                                        </small>
+
+                                        <strong class="font-changa font-16 font-semibold">
+                                            (71) 99999-9999
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-start">
+                                    <i class="fa-solid fa-envelope fs-4 color-yellow me-3 mt-1"></i>
+
+                                    <div>
+                                        <small class="text-muted d-block font-changa font-14 font-regular">
+                                            E-mail
+                                        </small>
+
+                                        <strong class="font-changa font-16 font-semibold">
+                                            contato@empresa.com.br
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="d-flex align-items-start">
+                                    <i class="fa-solid fa-location-dot fs-4 color-yellow me-3 mt-1"></i>
+
+                                    <div>
+                                        <small class="text-muted d-block font-changa font-14 font-regular">
+                                            Endereço
+                                        </small>
+
+                                        <span class="text-muted font-changa font-16 font-semibold">
+                                            Rua Exemplo, 123<br>
+                                            Guarajuba - BA
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Formulário -->
+                        <form>
+
+                            <div class="row g-4">
+
+                                <div class="col-12">
+                                    <input
+                                        type="text"
+                                        class="form-control rounded-pill py-2 px-4 h-45 font-changa font-15 font-regular"
+                                        placeholder="Nome">
+                                </div>
+
+                                <div class="col-md-7">
+                                    <input
+                                        type="email"
+                                        class="form-control rounded-pill py-2 px-4 h-45 font-changa font-15 font-regular"
+                                        placeholder="E-mail">
+                                </div>
+
+                                <div class="col-md-5">
+                                    <input
+                                        type="text"
+                                        class="form-control rounded-pill py-2 px-4 h-45 font-changa font-15 font-regular"
+                                        placeholder="Telefone">
+                                </div>
+
+                                <div class="col-12 text-lg-end text-center">
+                                    <button
+                                        class="btn btn-lg rounded-pill px-4 py-2 text-white h-45 font-changa font-16 font-regular bg-yellow text-decoration-none" >
+                                        Solicitar Contato
+                                    </button>
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
     <style>
+        .imovel-navigation-swiper{
+            position: absolute;
+            left: 0;
+            top: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            z-index: 9;
+            transform: translate(0, -50%);
+        }
+        .imovel-navigation-swiper .swiper-button-prev, .imovel-navigation-swiper .swiper-button-next{
+            color: var(--green-color);
+        }
+        .imovel-navigation-swiper .swiper-button-prev:after,
+        .imovel-navigation-swiper .swiper-button-next:after{
+            font-size: 35px;
+            font-weight: bold;
+        }
         .gallery-thumbs .swiper-slide{
             opacity: 1;
         }
@@ -163,7 +316,7 @@
             border-top: 15px solid var(--green-color);
         }
         .gallery-planta-baixa .swiper-slide img{
-            width: 320px;
+            width: 280px;
         }
         .gallery-top .swiper-slide{
             height: 600px;
@@ -193,6 +346,29 @@
         }
         .navigation-swiper{
             top: 0;
+        }
+        .object-fit-cover{
+            object-fit: cover;
+        }
+
+        .form-control{
+            border:1px solid var(--green-color);
+            box-shadow:none !important;            
+        }
+        .h-45{
+            height: 45px;
+        }
+        .form-control:focus{
+            border-color:var(--green-color);
+            box-shadow:0 0 0 .2rem rgba(239,149,80,.15)!important;
+        }
+
+        @media (max-width:991px){
+
+            .container-fluid .row{
+                flex-direction:column;
+            }
+
         }
     </style>
 @endsection

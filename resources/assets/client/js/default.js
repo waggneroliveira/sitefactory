@@ -178,6 +178,10 @@
       spaceBetween: 0,
       slidesPerView: 4,
       loopedSlides: 7,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
       breakpoints: {
         360: { slidesPerView: 2 },
         680: { slidesPerView: 2 },
